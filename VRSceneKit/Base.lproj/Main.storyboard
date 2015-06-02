@@ -1,22 +1,48 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LVB-YS-i5n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14A386a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LVB-YS-i5n">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Game View Controller-->
         <scene sceneID="CtS-rA-C9T">
             <objects>
-                <viewController id="LVB-YS-i5n" customClass="GameViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="LVB-YS-i5n" customClass="GameViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ubL-yK-d3C"/>
-                        <viewControllerLayoutGuide type="bottom" id="BKx-HY-NrO"/>
+                        <viewControllerLayoutGuide type="top" id="zaQ-sf-890"/>
+                        <viewControllerLayoutGuide type="bottom" id="5JG-gF-kST"/>
                     </layoutGuides>
-                    <sceneKitView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="bdc-N1-crn">
+                    <view key="view" contentMode="scaleToFill" id="Vvb-33-fV7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </sceneKitView>
+                        <subviews>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJ9-w4-FGF" userLabel="LeftView">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </sceneKitView>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5I-hf-Rme" userLabel="RightView">
+                                <rect key="frame" x="300" y="0.0" width="300" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </sceneKitView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VJ9-w4-FGF" firstAttribute="top" secondItem="Vvb-33-fV7" secondAttribute="topMargin" id="43R-PA-PgY"/>
+                            <constraint firstItem="VJ9-w4-FGF" firstAttribute="leading" secondItem="Vvb-33-fV7" secondAttribute="leadingMargin" constant="-16" id="DlB-OU-LBh"/>
+                            <constraint firstItem="B5I-hf-Rme" firstAttribute="top" secondItem="Vvb-33-fV7" secondAttribute="topMargin" id="FY2-XY-d7a"/>
+                            <constraint firstItem="B5I-hf-Rme" firstAttribute="width" secondItem="Vvb-33-fV7" secondAttribute="width" multiplier="0.5" id="LzU-qp-Z4V"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="B5I-hf-Rme" secondAttribute="trailing" constant="-16" id="cXP-ZL-V5V"/>
+                            <constraint firstItem="5JG-gF-kST" firstAttribute="top" secondItem="B5I-hf-Rme" secondAttribute="bottom" id="dyI-h7-i7D"/>
+                            <constraint firstItem="5JG-gF-kST" firstAttribute="top" secondItem="VJ9-w4-FGF" secondAttribute="bottom" id="ord-i6-KPw"/>
+                            <constraint firstItem="VJ9-w4-FGF" firstAttribute="width" secondItem="Vvb-33-fV7" secondAttribute="width" multiplier="0.5" id="r0c-rS-6BR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="leftView" destination="VJ9-w4-FGF" id="ONk-gC-ANU"/>
+                        <outlet property="rightView" destination="B5I-hf-Rme" id="Pf2-zq-6q7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>
             </objects>

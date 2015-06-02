@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <SceneKit/SceneKit.h>
+#import <CoreMotion/CoreMotion.h>
 
 @interface GameViewController : UIViewController
+
+@property (nonatomic, assign) IBOutlet SCNView *leftView;
+@property (nonatomic, assign) IBOutlet SCNView *rightView;
+
+@property (nonatomic, strong) CMMotionManager* motionManager;
 
 @end
